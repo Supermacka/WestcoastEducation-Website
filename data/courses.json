@@ -1,0 +1,72 @@
+[
+    {
+        "id": 1,
+        "courseNumber": 1001,
+        "title" : "Programming basics",
+        "description" : "To be set...",
+        "length" : 40,
+        "category" : "Programming",
+        "img" : "course_01.jpg",
+        "popular" : 0  
+    },
+    {
+        "id": 2,
+        "courseNumber": 1002,
+        "title" : "App development",
+        "description" : "To be set...",
+        "length" : 80,
+        "category" : "Programming",
+        "img" : "course_02.jpg",
+        "popular" : 1
+    },
+    {
+        "id": 3,
+        "courseNumber": 1003,
+        "title" : ".Net & C#",
+        "description" : "To be set...",
+        "length" : 80,
+        "category" : "Programming",
+        "img" : "course_03.jpg",
+        "popular" : 1
+    },
+    {
+        "id": 4,
+        "courseNumber": 1004,
+        "title" : "Game development",
+        "description" : "To be set...",
+        "length" : 80,
+        "category" : "Programming",
+        "img" : "course_04.jpg",
+        "popular" : 0
+    },
+    {
+        "id": 5,
+        "courseNumber": 1005,
+        "title" : "Programming with Java",
+        "description" : "To be set...",
+        "length" : 40,
+        "category" : "Programming",
+        "img" : "course_01.jpg",
+        "popular" : 0
+    },
+    {
+        "id": 6,
+        "courseNumber": 1006,
+        "title" : "Cloud and databases",
+        "description" : "To be set...",
+        "length" : 40,
+        "category" : "Programming",
+        "img" : "course_04.jpg",
+        "popular" : 0
+    },
+    {
+        "id": 7,
+        "courseNumber": 1007,
+        "title" : "VR & AR programming",
+        "description" : "To be set...",
+        "length" : 60,
+        "category" : "Programming",
+        "img" : "course_03.jpg",
+        "popular" : 1
+    }
+]

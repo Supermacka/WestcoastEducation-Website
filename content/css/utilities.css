@@ -1,0 +1,100 @@
+/* Styling for index.html */
+
+/* ------- Global Settings ------*/
+*
+{
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+}
+
+:root 
+{
+    --mainWhite: rgb(243, 244, 246);
+    --mainbtn: #11151B;
+    --fullwidth: 100%;
+}
+
+/* ------- Text/Characters styles ------*/
+.logo
+{
+    font-size: 30px;
+    color: rgb(248, 248, 250);
+    background-color: rgb(60, 60, 190);
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 0px 20px;
+}
+
+.title-dark h3
+{
+    font-size: 4rem;
+    color: #32373b;
+    margin-bottom: 2rem;
+}
+.title-light h3
+{
+    font-size: 4rem;
+    color: #e5e8eb;
+    margin-bottom: 2rem;
+}
+
+.text-dark p
+{
+    font-size: 2rem;
+    color: #9d9e9e;
+    line-height: 150%;
+}
+.text-light p
+{
+    font-size: 2rem;
+    color: #51575e;
+    line-height: 150%;
+}
+
+label
+{
+    font-size: 4rem;
+    color: #32373b;
+}
+
+/* ------- Container styles------*/
+.center-container
+{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.center-container-column
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------- Button styles ------*/
+.button-mainDark
+{
+    display: inline-block;
+    padding: 2rem 4rem;
+
+    font-size: 2rem;
+    background-color: var(--mainbtn);
+    color: rgb(255, 255, 255);
+
+    border: none;
+    outline: none !important;
+    cursor: pointer;
+    text-decoration: none !important;
+
+    transition: 0.1s ease;
+}
+.button-mainDark:hover
+{
+    box-shadow:inset 0px 0px 0px 4px  rgb(60, 60, 190);
+}

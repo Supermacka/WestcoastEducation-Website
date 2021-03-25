@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Westcoast Education | Home</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/content/css/courses.css">
+    <link rel="stylesheet" href="/content/css/utilities.css">
+    <link rel="stylesheet" href="/content/css/navigation-header.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-overlay">
+                <nav>
+                    <div class="topnav-container hide-main-menu">
+                        <a href="/app/public/index.html" class="logo">Westcoast Education</a>
+                        <div class="topnav-links">
+                            <a href="/app/public/index.html" class="topnav-link">Home</a>
+                            <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
+                            <a class="button-mainDark" href="/app/public/courses.html">Login</a>
+                        </div>
+                    </div>
+                    <!-- Mobile nav -->
+                    <div class="topnav-container hide-mobile-menu">
+                        <a href="/app/public/index.html" class="logo">Westcoast Education</a>
+                        <button id="openMobileMenu" class="topnav-menu-openButton">&#9776</button>
+
+                        <div class="topnav-overlay hide-overlay">
+                            <div class="top-container">
+                                <h5 class="topnav-logo">Westcoast Education</h5>
+                                <button id="closeMobileMenu" class="topnav-menu-closeButton">&#x2715</button>
+                            </div>
+                            <div class="topnav-links">
+                                <a href="/app/public/index.html" class="topnav-link">Home</a>
+                                <a href="/app/public/courses.html" class="topnav-link link-active ">Courses</a>
+                            </div>
+                            <div class="login-container">
+                                <a href="#" class="topnav-link">Create account</a>
+                                <a class="button-mainDark" href="/app/public/courses.html">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+
+                <article>
+                    <div class="title-container">
+                        <h1>All of our courses in one place</h1>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dynamic Courses -->
+    <main>
+        <div id="courseList" class="center-container-column current-courses-container title-dark">
+            <div class="grid-container">
+        </div>
+    </main>
+
+    <footer>
+        <div class="center-container container-footer">
+            <div class="logo-container-footer">
+                <a href="/app/public/index.html" class="logo">Westcoast Education</a>
+            </div>
+            <div class="links-container-footer">
+                <a href="/app/public/index.html" class="nav-link-dark">Home</a>
+                <a href="/app/public/courses.html" class="nav-link-dark link-active">Courses</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascipt -->
+    <script src="/scripts/app.js"></script>
+    <script src="/scripts/mobile.js"></script>
+</body>
+</html>
