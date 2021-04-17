@@ -17,9 +17,18 @@ coursesList.then(response => response.json().then(data =>
                     <div class="course-container">
                         <img class="course-img" src="/content/img/${data[i].img}" alt="${data[i].title}">
                         <div class="course-img-overlay"></div>
-                        <h5 class="course-title">${data[i].title}</h5>
+
                         <div class="popular">
                             <p>Popular</p>
+                        </div>
+
+                        <h5 class="course-title">${data[i].title}</h5>
+                        <div class="course-details-container">
+                            <p class="course-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa odio expedita nam necessitatibus nexus p...</p>
+                            <div class="course-length-container">
+                                <h2>${data[i].length}h</h2>
+                                <h5>Length</h5>
+                            </div>
                         </div>
                     </div>
                     `;
@@ -31,7 +40,15 @@ coursesList.then(response => response.json().then(data =>
                     <div class="course-container">
                         <img class="course-img" src="/content/img/${data[i].img}" alt="${data[i].title}">
                         <div class="course-img-overlay"></div>
+
                         <h5 class="course-title">${data[i].title}</h5>
+                        <div class="course-details-container">
+                            <p class="course-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa odio expedita nam necessitatibus nexus p...</p>
+                            <div class="course-length-container">
+                                <h2>${data[i].length}h</h2>
+                                <h5>Length</h5>
+                            </div>
+                        </div>
                     </div>
                     `;
                 }
