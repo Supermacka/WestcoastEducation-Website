@@ -99,30 +99,8 @@
     cursor: pointer;
 }
 
-.login-container
-{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-
-    margin: 2rem;
-    padding: 5rem;
-    background-color: white;
-}
-.login-container a:not(.button-mainDark)
-{
-    font-size: 1.5rem;
-    color: rgb(60, 61, 65);
-    text-decoration: none;
-}
-
-@media only screen and (max-width: 1200px) 
+@media only screen and (max-width: 1400px) 
 {
     .topnav-container
     {
@@ -155,17 +133,23 @@
     }
 }
 
-@media only screen and (max-width: 500px) 
-{
-
-}
-
 /* ------Footer------ */
 .container-footer
 {
+    position: relative;
     flex-wrap: wrap; /* Not sure what it does??*/
     padding: 5rem 0;
-    border-top: solid 2px rgba(0, 0, 0, .15);
+    margin: 0 2rem;
+}
+.container-footer::before
+{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: rgb(196, 198, 199);
 }
 
 .logo-container-footer
@@ -180,6 +164,7 @@
 {
     display: flex;
     flex: 1;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 8rem;
@@ -191,4 +176,26 @@
     font-size: 2.5rem;
     color: var(--link-color);
     text-decoration: none;
+}
+
+
+@media only screen and (max-width: 1400px) 
+{
+    .container-footer
+    {
+        flex-wrap: wrap; /* Not sure what it does??*/
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .links-container-footer
+    {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
 }

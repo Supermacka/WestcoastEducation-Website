@@ -7,7 +7,8 @@
         "length" : 40,
         "category" : "Programming",
         "img" : "course_01.jpg",
-        "popular" : 0  
+        "popular" : 0,
+        "price" : 2.99
     },
     {
         "id": 2,
@@ -17,17 +18,19 @@
         "length" : 80,
         "category" : "Programming",
         "img" : "course_02.jpg",
-        "popular" : 1
+        "popular" : 1,
+        "price" : 11.99
     },
     {
         "id": 3,
         "courseNumber": 1003,
-        "title" : ".Net & C#",
+        "title" : ".Net and C#",
         "description" : "To be set...",
         "length" : 80,
         "category" : "Programming",
         "img" : "course_03.jpg",
-        "popular" : 1
+        "popular" : 1,
+        "price" : 11.99
     },
     {
         "id": 4,
@@ -37,7 +40,8 @@
         "length" : 80,
         "category" : "Programming",
         "img" : "course_04.jpg",
-        "popular" : 0
+        "popular" : 0,
+        "price" : 11.99
     },
     {
         "id": 5,
@@ -47,26 +51,40 @@
         "length" : 40,
         "category" : "Programming",
         "img" : "course_01.jpg",
-        "popular" : 0
+        "popular" : 0,
+        "price" : 2.99
     },
     {
         "id": 6,
         "courseNumber": 1006,
         "title" : "Cloud and databases",
         "description" : "To be set...",
-        "length" : 40,
+        "length" : 65,
         "category" : "Programming",
         "img" : "course_04.jpg",
-        "popular" : 0
+        "popular" : 0,
+        "price" : 7.99
     },
     {
         "id": 7,
         "courseNumber": 1007,
-        "title" : "VR & AR programming",
+        "title" : "VR and AR programming",
         "description" : "To be set...",
-        "length" : 60,
+        "length" : 80,
         "category" : "Programming",
         "img" : "course_03.jpg",
-        "popular" : 1
+        "popular" : 1,
+        "price" : 14.99
+    },
+    {
+        "id": 8,
+        "courseNumber": 1008,
+        "title" : "Electronics and Wires",
+        "description" : "To be set...",
+        "length" : 45,
+        "category" : "Programming",
+        "img" : "course_01.jpg",
+        "popular" : 0,
+        "price" : 2.99
     }
 ]

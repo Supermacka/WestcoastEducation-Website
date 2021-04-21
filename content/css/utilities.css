@@ -1,11 +1,10 @@
-/* Styling for index.html */
-
 /* ------- Global Settings ------*/
 *
 {
     margin: 0;
     padding: 0;
     font-size: 10px;
+    text-decoration: none;
 }
 
 :root 

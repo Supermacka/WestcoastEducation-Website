@@ -150,6 +150,7 @@
 
 .popular p
 {
+    z-index: 1;
     position: absolute;
     top: -2rem;
     left: 50%;
@@ -160,6 +161,68 @@
     color: white;
     font-size: 2rem;
     font-size: bold;
+}
+.course-select-overlay
+{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    background-color: rgba(16, 16, 17, 0.808);
+}
+.course-select-overlay button
+{
+    font-size: 24px;
+    font-weight: normal;
+    background: none;
+    color: white;
+    border: 3px solid white;
+    outline: none;
+    padding: 2rem 4rem;
+}
+.course-select-overlay button:hover
+{
+    font-size: 24px;
+    font-weight: normal;
+    background: none;
+    background-color: white;
+    color: var(--mainDark);
+    border: 3px solid white;
+    outline: none;
+    padding: 2rem 4rem;
+}
+
+.hideOverlay
+{
+    display: none;
+}
+
+.course-select-price 
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.course-select-price h5
+{
+    font-size: 18px;
+    color: rgb(226, 227, 228);
+}
+.course-select-price #price
+{
+    font-size: 28px;
+    color: white;
+    margin: 0;
 }
 
 .course-title

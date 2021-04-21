@@ -10,12 +10,42 @@
     <link rel="stylesheet" href="/content/css/courses.css">
     <link rel="stylesheet" href="/content/css/utilities.css">
     <link rel="stylesheet" href="/content/css/navigation-header.css">
+    <link rel="stylesheet" href="/content/css/cart.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
+
+    <!-- Shopping Cart -->
+    <section>
+        <div id="cart" class="cart">
+            <div class="cart-header">
+                <h5>Shopping Cart</h5>
+                <a class="button-close" onclick="Cart.closeNav()" href="#">&times;</a>
+            </div>
+
+            <div class="cart-body">
+                <h3 class="title">Your selected courses</h3>
+                <div class="items-container">
+                    <!-- Dynamic code... -->
+                </div>
+            </div>
+
+            <div class="cart-footer">
+                <div class="checkout-container">
+                    <div class="sum-container">
+                        <h5>Total price</h5>
+                        <h2 id="sumPrice">0$</h2>
+                    </div>
+                    <button class="button-checkout button-mainDark">Checkout</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <header>
         <div class="header-container">
             <div class="header-overlay">
@@ -25,7 +55,7 @@
                         <div class="topnav-links">
                             <a href="/app/public/index.html" class="topnav-link">Home</a>
                             <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
-                            <a href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
+                            <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
                             <a class="button-mainDark" href="/app/public/courses.html">Admin</a>
                         </div>
                     </div>
@@ -41,11 +71,9 @@
                             </div>
                             <div class="topnav-links">
                                 <a href="/app/public/index.html" class="topnav-link">Home</a>
-                                <a href="/app/public/courses.html" class="topnav-link link-active ">Courses</a>
-                            </div>
-                            <div class="login-container">
-                                <a href="#" class="topnav-link">Create account</a>
-                                <a class="button-mainDark" href="/app/public/courses.html">Login</a>
+                                <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
+                                <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
+                                <a class="button-mainDark" href="/app/public/courses.html">Admin</a>
                             </div>
                         </div>
                     </div>
@@ -64,6 +92,7 @@
     <main>
         <div id="courseList" class="center-container-column current-courses-container title-dark">
             <div class="grid-container">
+                <!-- HERE -->
             </div>
         </div>
     </main>
@@ -81,7 +110,9 @@
     </footer>
 
     <!-- Javascipt -->
-    <script src="/scripts/app.js"></script>
+    <script src="/data/courses.json"></script>
+    <script src="/scripts/courses.js"></script>
     <script src="/scripts/mobile.js"></script>
+    <script src="/scripts/cart.js"></script>
 </body>
 </html>
