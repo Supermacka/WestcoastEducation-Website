@@ -1,11 +1,12 @@
-// DOM elements
+// Variables - Cart Class 
 const cartElement = document.querySelector("#cart");
 const cartItemsContainer = document.querySelector('.items-container');
 
-// ----- Cart Class ----- 
 const jsonResponse = fetch('/data/courses.json');
 let cartA = [];
 const sumPriceElement = document.querySelector('#sumPrice');
+const checkoutButton = document.querySelector('#checkout');
+const checkoutFContainerElement = document.querySelector('.checkoutF-container');
 
 class Cart 
 { 
@@ -19,30 +20,27 @@ class Cart
     cartElement.style.width = "0";
   }
   
-  // ----- 1. "Add to cart"-button is pressed -----
   static async addToCart(selectedCourse)
   {
-    // ----- 2. Add selected course to an array -----
+    // Add selected course to an array
     let selectedTitle = selectedCourse.parentNode.parentNode.querySelector("#title").innerHTML;
   
-    await jsonResponse.then(Response => Response.clone().json().then(data => {
-      for (let i = 0; i < data.length; i++)
+    for (let i = 0; i < coursesListJS.length; i++)
+    {
+      if (coursesListJS[i].title == selectedTitle)
       {
-        if (data[i].title == selectedTitle)
+        if (cartA.some((item) => this.isEquivalent(item, coursesListJS[i]) == true) == true) 
         {
-          if (cartA.some((item) => this.isEquivalent(item, data[i]) == true) == true) 
-          {
-            // Item already has been added
-          }
-          else
-          {
-            cartA.push(data[i]);
-          }
+          // Item already has been added
+        }
+        else
+        {
+          cartA.push(coursesListJS[i]);
         }
       }
-    }));
+    }
     
-    // ----- 3. Update the cart ----- 
+    // Update the cart 
     this.updateCart();
   }
 
@@ -93,9 +91,8 @@ class Cart
   {
     // ----- Update the cart ----- 
     cartItemsContainer.innerHTML = '';
-
     let totalPrice = 0;
-    for (const item of cartA)
+    for (let item of cartA)
     {
       let insertHTML = `
           <div class="item-container">
@@ -116,7 +113,7 @@ class Cart
                   <div class="card-description">
                       <h5 id="id">#${item.courseNumber}</h5>
                       <h2 id="title">${item.title}</h2>
-                      <p id="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo hic quaerat vero. Ad hic, quaerat maiores aspernatur vitae incidunt nemo!</p>
+                      <p id="description">${item.description}</p>
                   </div>
               </div>
   
@@ -132,5 +129,18 @@ class Cart
     }
 
     sumPriceElement.innerHTML = `${totalPrice.toFixed(2)}$`;
+  }
+
+  static checkout()
+  {
+    cartA.splice(0, cartA.length);
+    checkoutFContainerElement.classList.remove('hideElement');
+  }
+
+  static finished()
+  {
+    checkoutFContainerElement.classList.add('hideElement');
+    this.updateCart();
+    this.closeNav();
   }
 }

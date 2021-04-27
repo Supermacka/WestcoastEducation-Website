@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/content/css/utilities.css">
     <link rel="stylesheet" href="/content/css/navigation-header.css">
     <link rel="stylesheet" href="/content/css/cart.css">
+    <link rel="stylesheet" href="/content/css/admin.css">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,6 +19,66 @@
 </head>
 <body>
 
+    <!-- Admin panelA -->
+    <section>
+        <div id="adminPanel" class="overlay-container hideElement">
+            <section>
+                <div class="admin-panel">
+                    <div class="admin-panel-header">
+                        <h3>Add a new course</h3>
+                        <button id="closeButton" class="topnav-menu-closeButton">&#x2715</button>
+                    </div>
+                    <!-- panelA A -->
+                    <section>
+                        <div class="admin-panelA-body">
+                            <form action="">
+                                <div class="admin-panelA-inputField">
+                                    <label>Title*</label>
+                                    <input type="text" id="course-title" placeholder="Enter a title for the course" required>
+                                </div>
+                                <div class="admin-panelA-inputField">
+                                    <label>Description*</label>
+                                    <textarea type="text" id="course-description" placeholder="Enter a description for the course" rows="1" required></textarea>
+                                </div>
+                                <div class="admin-panelA-columnInputField">
+                                    <div class="admin-panelA-inputField">
+                                        <label>Course number*</label>
+                                        <input type="number" min="1" id="course-number" placeholder="#" required>
+                                    </div>
+                                    <div class="admin-panelA-inputField">
+                                        <label>Course length</label>
+                                        <input type="number" min="1" value="1" id="course-length" placeholder="hours" required>
+                                    </div>
+                                    <div class="admin-panelA-inputField">
+                                        <label>Price</label>
+                                        <input type="text" value="1" placeholder="$" id="course-price" required>
+                                    </div>
+                                </div>
+                                <div class="admin-panelA-inputField">
+                                    <label>Popular</label>
+                                    <label class="switch">
+                                        <input id="course-popular" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Panle B -->
+                    <!-- <section>
+                        <div class="admin-panelB-body">
+                            Drag and drop file
+                        </div>
+                    </section> -->
+                    <div class="admin-panelA-footer">
+                        <button id="saveCourseButton" class="button-mainDark">Save</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+    
     <!-- Shopping Cart -->
     <section>
         <div id="cart" class="cart">
@@ -39,16 +100,29 @@
                         <h5>Total price</h5>
                         <h2 id="sumPrice">0$</h2>
                     </div>
-                    <button class="button-checkout button-mainDark">Checkout</button>
+                    <button onclick="Cart.checkout()" id="checkout" class="button-checkout button-mainDark">Checkout</button>
                 </div>
             </div>
 
+        </div>
+
+        <div class="checkoutF-container hideElement">
+            <div class="checkoutF-card">
+                <div class="checkoutF-message">
+                    <i class="fa fa-check"></i>
+                    <h2>Thank you for your purchase</h2>
+                </div>
+                <div class="checkout-button">
+                    <button onclick="Cart.finished()" class="button-mainDark">Done</button>
+                </div>
+            </div>
         </div>
     </section>
 
     <header>
         <div class="header-container">
             <div class="header-overlay">
+                <!-- Header Navigation -->
                 <nav>
                     <div class="topnav-container hide-main-menu">
                         <a href="/app/public/index.html" class="logo">Westcoast Education</a>
@@ -56,7 +130,7 @@
                             <a href="/app/public/index.html" class="topnav-link">Home</a>
                             <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
                             <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
-                            <a class="button-mainDark" href="/app/public/courses.html">Admin</a>
+                            <a id="adminButton" class="button-mainDark">admin</a>
                         </div>
                     </div>
                     <!-- Mobile nav -->
@@ -73,7 +147,7 @@
                                 <a href="/app/public/index.html" class="topnav-link">Home</a>
                                 <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
                                 <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
-                                <a class="button-mainDark" href="/app/public/courses.html">Admin</a>
+                                <a id="adminButtonMobile" class="button-mainDark">add min</a>
                             </div>
                         </div>
                     </div>
@@ -110,6 +184,8 @@
     </footer>
 
     <!-- Javascipt -->
+    <script src="/scripts/utilities.js"></script>
+    <script src="/scripts/admin.js"></script>
     <script src="/data/courses.json"></script>
     <script src="/scripts/courses.js"></script>
     <script src="/scripts/mobile.js"></script>
