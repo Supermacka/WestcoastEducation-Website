@@ -1,82 +1,93 @@
+// Open Admin Panel
 const adminButton = document.querySelector('#adminButton');
 const adminButtonMobile = document.querySelector('#adminButtonMobile');
-const adminPanel = document.querySelector('#adminPanel')
 
-// Open Admin Panel
 adminButton.addEventListener("click", () =>
 {
-    adminPanel.classList.remove('hideElement');
+    AdminPanel.openAdminPanel();
 });
 adminButtonMobile.addEventListener("click", () =>
 {
-    adminPanel.classList.remove('hideElement');
+    AdminPanel.openAdminPanel();
 });
 
-// Close Admin Panel
+// Close-Admin-Panel button
 const closeButton = document.querySelector('#closeButton');
 
 closeButton.addEventListener('click', () =>
 {
-    adminPanel.classList.add('hideElement');
+    AdminPanel.closeAdminPanel();
 })
 
-
-// Panel Input-fields
-const courseNumberInput = document.querySelector('#course-number');
-const titleInput = document.querySelector('#course-title');
-const descriptionInput = document.querySelector('#course-description');
-const lengthInput = document.querySelector('#course-length');
-const priceInput = document.querySelector('#course-price');
-const popularSwitch = document.querySelector('#course-popular');
-
-// Save-Course
+// Save-Course button
 const saveCourseButton = document.querySelector('#saveCourseButton');
 
 saveCourseButton.addEventListener('click', () =>
 {
-    createCourse();
+    AdminPanel.createCourse();
 })
 
-const createCourse = () => 
+class AdminPanel
 {
-    const course = {
-      id: 0,
-      courseNumber: courseNumberInput.value,
-      title: titleInput.value,
-      description: descriptionInput.value,
-      length: Number(lengthInput.value),
-      img: "course_03.jpg",
-      popular: Number(popularSwitch.checked),
-      price: Number(priceInput.value)
-    };
+    // Open or Close
+    static adminPanelElement = document.querySelector('#adminPanel');
     
-    // ALL inputs have a value
-    let isValid = true;
-    for (let prop in course)
+    static openAdminPanel()
     {
-        if (course[prop] === "")
-        {
-            alert("All required fieds must be filled");
-            isValid = false;
-            break;
-        } 
+        this.adminPanelElement.classList.remove('hideElement');
     }
 
-    // IF NOT duplicate. Put object in list
-    if (isValid === true)
+    static closeAdminPanel()
     {
-        if (coursesListJS.some((item) => item.title === course.title))
-        {
-            alert("A course with the same title already exists");
-        }
-        else
-        {
-            // Push new course
-            coursesListJS.push(course)
-            console.log(course);
-            loadCourses();
-            adminPanel.classList.add('hideElement');
-        }
+        this.adminPanelElement.classList.add('hideElement');
     }
 
-};
+    // Create a new course
+    static courseNumberInput = document.querySelector('#course-number');
+    static titleInput = document.querySelector('#course-title');
+    static descriptionInput = document.querySelector('#course-description');
+    static lengthInput = document.querySelector('#course-length');
+    static priceInput = document.querySelector('#course-price');
+    static popularSwitch = document.querySelector('#course-popular');
+
+    static createCourse() 
+    {
+        let course = new Course(
+            this.courseNumberInput.value,
+            this.titleInput.value,
+            this.descriptionInput.value,
+            Number(this.lengthInput.value),
+            Number(this.popularSwitch.checked),
+            Number(this.priceInput.value)
+        );
+        
+        // ALL inputs have a value
+        let isValid = true;
+        for (let prop in course)
+        {
+            if (course[prop] === "")
+            {
+                alert("All required fields must be filled");
+                isValid = false;
+                break;
+            } 
+        }
+    
+        // IF NOT duplicate. Put object in list
+        if (isValid === true)
+        {
+            if (coursesListJS.some((item) => item.title === course.title))
+            {
+                alert("A course with the same title already exists");
+            }
+            else
+            {
+                // Push new course
+                coursesListJS.push(course)
+                console.log(course);
+                loadCourses();
+                this.closeAdminPanel();
+            }
+        }
+    };
+}

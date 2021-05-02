@@ -59,6 +59,18 @@
     text-decoration: none;
 }
 
+.topnav-links #cartItemCount
+{
+    z-index: 2;
+    top: 0%;
+    left: 100%;
+    transform: translate(0%, -50%);
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(247, 247, 248);
+}
+
 .topnav-menu-openButton
 {
     background: none;

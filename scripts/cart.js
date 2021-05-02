@@ -10,6 +10,9 @@ const checkoutFContainerElement = document.querySelector('.checkoutF-container')
 
 class Cart 
 { 
+  static cartItemCountElement = document.querySelectorAll("#cartItemCount");
+  static cartItemCount = 0;
+
   static openNav() 
   {
     cartElement.style.width = "750px";
@@ -36,6 +39,8 @@ class Cart
         else
         {
           cartA.push(coursesListJS[i]);
+          this.cartItemCount++;
+          console.log(this.cartItemCount);
         }
       }
     }
@@ -53,6 +58,8 @@ class Cart
       if (this.isEquivalent(cartA[i].title, selectedTitle))
       {
         cartA.splice(i, 1);
+        this.cartItemCount--;
+        console.log(this.cartItemCount);
       }
     }
 
@@ -124,9 +131,12 @@ class Cart
       </div>
       `;
       cartItemsContainer.insertAdjacentHTML('afterbegin', insertHTML);
-
       totalPrice += item.price;
     }
+
+    this.cartItemCountElement.forEach(item => {
+      item.innerHTML = this.cartItemCount;
+    });
 
     sumPriceElement.innerHTML = `${totalPrice.toFixed(2)}$`;
   }
@@ -140,6 +150,7 @@ class Cart
   static finished()
   {
     checkoutFContainerElement.classList.add('hideElement');
+    this.cartItemCount = 0;
     this.updateCart();
     this.closeNav();
   }

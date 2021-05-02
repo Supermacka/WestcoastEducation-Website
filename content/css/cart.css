@@ -69,6 +69,13 @@
   font-weight: normal;
   color: rgb(40, 42, 44);
 }
+.cart-body .title #cartItemCount
+{
+  margin-bottom: 2rem;
+  font-size: 34px;
+  font-weight: normal;
+  color: rgb(153, 155, 155);
+}
 
 .items-container
 {

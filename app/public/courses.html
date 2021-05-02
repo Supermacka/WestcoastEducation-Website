@@ -88,7 +88,7 @@
             </div>
 
             <div class="cart-body">
-                <h3 class="title">Your selected courses</h3>
+                <h3 class="title">Your selected courses <span id="cartItemCount">0</span></h3>
                 <div class="items-container">
                     <!-- Dynamic code... -->
                 </div>
@@ -106,6 +106,7 @@
 
         </div>
 
+        <!-- Checkout Panel -->
         <div class="checkoutF-container hideElement">
             <div class="checkoutF-card">
                 <div class="checkoutF-message">
@@ -129,7 +130,7 @@
                         <div class="topnav-links">
                             <a href="/app/public/index.html" class="topnav-link">Home</a>
                             <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
-                            <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
+                            <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"><span id="cartItemCount">0</i></a>
                             <a id="adminButton" class="button-mainDark">admin</a>
                         </div>
                     </div>
@@ -146,7 +147,7 @@
                             <div class="topnav-links">
                                 <a href="/app/public/index.html" class="topnav-link">Home</a>
                                 <a href="/app/public/courses.html" class="topnav-link link-active">Courses</a>
-                                <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"></i></a>
+                                <a onclick="Cart.openNav()" href="#"><i class="fa fa-shopping-bag" style="font-size:36px;"><span id="cartItemCount">0</i></a>
                                 <a id="adminButtonMobile" class="button-mainDark">add min</a>
                             </div>
                         </div>
@@ -185,6 +186,7 @@
 
     <!-- Javascipt -->
     <script src="/scripts/utilities.js"></script>
+    <script src="/scripts/course.js"></script>
     <script src="/scripts/admin.js"></script>
     <script src="/data/courses.json"></script>
     <script src="/scripts/courses.js"></script>
